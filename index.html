@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière Beauty - Premium Skincare & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B6F8C;
+            --primary-dark: #6B546C;
+            --secondary: #D4A5A5;
+            --accent: #C9A961;
+            --dark: #2C2C2C;
+            --light: #FAF8F5;
+            --cream: #F5F0EB;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #8B6F8C 0%, #D4A5A5 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .admin-btn {
+            background: var(--gradient);
+            color: var(--white) !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #F5F0EB 0%, #E8DDD8 50%, #D4A5A5 100%);
+            padding: 10rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 900px;
+            height: 900px;
+            background: rgba(139, 111, 140, 0.1);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1.5rem 3.5rem;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(139, 111, 140, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139, 111, 140, 0.4);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 7rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 5rem;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+            color: #555;
+            font-size: 1.15rem;
+            line-height: 2;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 3.5rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            height: 300px;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.08);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-content {
+            padding: 3rem;
+        }
+
+        .blog-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .blog-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: gap 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .read-more:hover {
+            gap: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.3rem;
+            border: 2px solid #E8E0D8;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 111, 140, 0.3);
+        }
+
+        /* Blog Detail Page */
+        .blog-detail {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 6rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 4rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: gap 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .back-button:hover {
+            gap: 1.2rem;
+        }
+
+        .blog-header {
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            line-height: 1.2;
+            font-weight: 600;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .blog-featured-image {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 5rem;
+        }
+
+        .blog-section {
+            margin-bottom: 5rem;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--secondary);
+            font-weight: 600;
+        }
+
+        .blog-section h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin: 3.5rem 0 2rem;
+            font-weight: 600;
+        }
+
+        .blog-section p {
+            margin-bottom: 2.2rem;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #555;
+        }
+
+        .blog-section ul, .blog-section ol {
+            margin-left: 3rem;
+            margin-bottom: 2.5rem;
+            color: #555;
+        }
+
+        .blog-section li {
+            margin-bottom: 1.3rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .infographic {
+            background: linear-gradient(135deg, var(--cream) 0%, #F0E8E0 100%);
+            padding: 4rem;
+            border-radius: 15px;
+            margin: 4rem 0;
+            border-left: 5px solid var(--accent);
+        }
+
+        .infographic h3 {
+            color: var(--dark);
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .infographic ul {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .infographic li {
+            padding: 1.3rem 0;
+            padding-left: 3rem;
+            position: relative;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(139, 111, 140, 0.1);
+        }
+
+        .infographic li:last-child {
+            border-bottom: none;
+        }
+
+        .infographic li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .key-takeaways {
+            background: var(--gradient);
+            padding: 4.5rem;
+            border-radius: 20px;
+            color: var(--white);
+            margin: 5rem 0;
+        }
+
+        .key-takeaways h3 {
+            font-size: 2.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 600;
+        }
+
+        .key-takeaways ul {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .key-takeaways li {
+            padding: 1.5rem 0;
+            padding-left: 3.5rem;
+            position: relative;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .key-takeaways li:last-child {
+            border-bottom: none;
+        }
+
+        .key-takeaways li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.7rem;
+        }
+
+        .faq-item {
+            background: var(--cream);
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 2.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            font-size: 1.15rem;
+        }
+
+        .faq-answer {
+            padding: 0 2.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 2.5rem;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Admin Panel */
+        .admin-login {
+            max-width: 550px;
+            margin: 8rem auto;
+            background: var(--white);
+            padding: 5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .admin-panel {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5rem;
+            padding-bottom: 3rem;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+        }
+
+        .admin-sidebar {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            height: fit-content;
+        }
+
+        .admin-menu {
+            list-style: none;
+        }
+
+        .admin-menu li {
+            margin-bottom: 1.5rem;
+        }
+
+        .admin-menu a {
+            display: block;
+            padding: 1.5rem;
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background 0.3s;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .admin-menu a:hover,
+        .admin-menu a.active {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .admin-content {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .code-editor {
+            width: 100%;
+            min-height: 450px;
+            font-family: 'Courier New', monospace;
+            padding: 2.5rem;
+            border: 2px solid #E8E0D8;
+            border-radius: 10px;
+            resize: vertical;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .page-editor {
+            width: 100%;
+            min-height: 350px;
+            padding: 1.8rem;
+            border: 2px solid #E8E0D8;
+            border-radius: 10px;
+            resize: vertical;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .blog-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem;
+            background: var(--cream);
+            border-radius: 12px;
+        }
+
+        .blog-actions {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .btn-danger {
+            background: #C75B5B;
+            color: var(--white);
+        }
+
+        .btn-success {
+            background: #7CB342;
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 6rem 2rem 3rem;
+            margin-top: 10rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-section h3 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #B8B0A8;
+            text-decoration: none;
+            line-height: 2.3;
+            font-size: 1.05rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 4rem;
+            border-top: 1px solid #444;
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-detail {
+                padding: 4rem 2.5rem;
+            }
+
+            .blog-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .blog-featured-image {
+                height: 350px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">Lumière Beauty</a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('blogs')">Blogs</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#" class="admin-btn" onclick="showPage('admin-login')">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 id="home-hero-title">Discover the Art of Radiant Skin</h1>
+                <p id="home-hero-text">Expert skincare guidance, personalized routines, and transformative beauty insights curated by industry professionals to help you achieve your most luminous complexion in 2026</p>
+                <a href="#" class="cta-button" onclick="showPage('blogs')">Explore Articles</a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title" id="home-featured-title">Featured Articles</h2>
+            <p class="section-subtitle">Handpicked guides for your skincare journey</p>
+            <div class="blog-grid" id="featured-blogs">
+                <!-- Featured blogs will be loaded here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about-page" class="page hidden">
+        <section>
+            <h2 class="section-title" id="about-title">About Lumière Beauty</h2>
+            <p class="section-subtitle">Your trusted beauty companion</p>
+            <div class="about-content">
+                <div class="about-image">
+                    <img id="about-image" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600" alt="About Lumière">
+                </div>
+                <div class="about-text">
+                    <h3 id="about-subtitle">Transforming Skincare Through Science & Art</h3>
+                    <div id="about-content">
+                        <p>Welcome to Lumière Beauty, your premier destination for science-backed skincare education and personalized beauty solutions. We're dedicated to helping you achieve healthy, radiant skin through expert guidance and evidence-based routines.</p>
+                        <p>Our team of certified dermatologists, licensed estheticians, and beauty experts collaborate to bring you the most effective, research-supported skincare strategies. We believe that everyone deserves to feel confident and beautiful in their own skin.</p>
+                        <p>Through our comprehensive guides, detailed product reviews, and customized recommendations, we've empowered thousands to transform their skincare journey. Your path to luminous, healthy skin begins here.</p>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="stat-1">15+</span>
+                            <span>Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="stat-2">750+</span>
+                            <span>Articles Published</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="stat-3">100k+</span>
+                            <span>Happy Users</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blogs Page -->
+    <div id="blogs-page" class="page hidden">
+        <section>
+            <h2 class="section-title" id="blogs-title">Beauty & Skincare Blog</h2>
+            <p class="section-subtitle">Expert advice for every skin concern</p>
+            <div class="blog-grid" id="all-blogs">
+                <!-- All blogs will be loaded here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Detail Page -->
+    <div id="blog-detail-page" class="page hidden">
+        <section>
+            <div class="blog-detail" id="blog-content">
+                <!-- Blog content will be loaded here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact-page" class="page hidden">
+        <section>
+            <h2 class="section-title" id="contact-title">Get In Touch</h2>
+            <p class="section-subtitle">We'd love to hear from you</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p id="contact-email">hello@lumierebeauty.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p id="contact-phone">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Response Time</h4>
+                            <p id="contact-response">Within 12 hours</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" id="social-fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="social-insta"><i class="fab fa-instagram"></i></a>
+                        <a href="#" id="social-twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" id="social-pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" required placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" required placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Admin Login -->
+    <div id="admin-login-page" class="page hidden">
+        <div class="admin-login">
+            <h2 style="text-align: center; margin-bottom: 3rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3rem; font-weight: 600;">Admin Access</h2>
+            <form onsubmit="handleAdminLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="admin-email" required placeholder="Enter admin email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="admin-password" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <p id="login-hint" style="text-align: center; margin-top: 2.5rem; color: #888; font-size: 0.95rem; cursor: pointer;" onclick="showHint()">
+                <i class="fas fa-question-circle"></i> Need help?
+            </p>
+            <p id="hint-text" class="hidden" style="text-align: center; margin-top: 1.5rem; color: var(--primary); font-size: 0.9rem; font-style: italic;">
+                Contact admin for access credentials
+            </p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel-page" class="page hidden">
+        <div class="admin-panel" style="display: block;">
+            <div class="admin-header">
+                <h2 style="background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3rem; font-weight: 600;">Admin Dashboard</h2>
+                <button class="btn btn-danger" onclick="handleLogout()">Logout</button>
+            </div>
+            <div class="admin-grid">
+                <div class="admin-sidebar">
+                    <ul class="admin-menu">
+                        <li><a href="#" class="active" onclick="showAdminTab('edit-pages')">Edit Pages</a></li>
+                        <li><a href="#" onclick="showAdminTab('add-blog')">Add New Blog</a></li>
+                        <li><a href="#" onclick="showAdminTab('manage-blogs')">Manage Blogs</a></li>
+                        <li><a href="#" onclick="showAdminTab('analytics')">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="admin-content">
+                    <!-- Edit Pages Tab -->
+                    <div id="edit-pages-tab">
+                        <h3 style="margin-bottom: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; font-weight: 600;">Edit Page Content</h3>
+                        
+                        <div style="margin-bottom: 4rem; padding: 3rem; background: var(--cream); border-radius: 15px;">
+                            <h4 style="margin-bottom: 2rem; color: var(--dark); font-size: 1.8rem; font-weight: 600;">🏠 Home Page</h4>
+                            <div class="form-group">
+                                <label>Hero Title</label>
+                                <input type="text" id="edit-home-hero-title" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Hero Text</label>
+                                <textarea id="edit-home-hero-text" class="page-editor" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Featured Section Title</label>
+                                <input type="text" id="edit-home-featured-title" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <button class="btn btn-success" onclick="saveHomeContent()" style="margin-top: 2rem; width: 100%;">Save Home Changes</button>
+                        </div>
+
+                        <div style="margin-bottom: 4rem; padding: 3rem; background: var(--cream); border-radius: 15px;">
+                            <h4 style="margin-bottom: 2rem; color: var(--dark); font-size: 1.8rem; font-weight: 600;">👤 About Page</h4>
+                            <div class="form-group">
+                                <label>Page Title</label>
+                                <input type="text" id="edit-about-title" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Subtitle</label>
+                                <input type="text" id="edit-about-subtitle" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>About Image URL</label>
+                                <input type="text" id="edit-about-image" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>About Content (HTML allowed)</label>
+                                <textarea id="edit-about-content" class="page-editor" rows="10"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Stat 1 Number</label>
+                                <input type="text" id="edit-stat-1" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Stat 2 Number</label>
+                                <input type="text" id="edit-stat-2" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Stat 3 Number</label>
+                                <input type="text" id="edit-stat-3" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <button class="btn btn-success" onclick="saveAboutContent()" style="margin-top: 2rem; width: 100%;">Save About Changes</button>
+                        </div>
+
+                        <div style="margin-bottom: 4rem; padding: 3rem; background: var(--cream); border-radius: 15px;">
+                            <h4 style="margin-bottom: 2rem; color: var(--dark); font-size: 1.8rem; font-weight: 600;">📝 Blogs Page</h4>
+                            <div class="form-group">
+                                <label>Page Title</label>
+                                <input type="text" id="edit-blogs-title" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <button class="btn btn-success" onclick="saveBlogsContent()" style="margin-top: 2rem; width: 100%;">Save Blogs Changes</button>
+                        </div>
+
+                        <div style="padding: 3rem; background: var(--cream); border-radius: 15px;">
+                            <h4 style="margin-bottom: 2rem; color: var(--dark); font-size: 1.8rem; font-weight: 600;">📧 Contact Page</h4>
+                            <div class="form-group">
+                                <label>Page Title</label>
+                                <input type="text" id="edit-contact-title" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Email</label>
+                                <input type="email" id="edit-contact-email" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Phone</label>
+                                <input type="tel" id="edit-contact-phone" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Response Time</label>
+                                <input type="text" id="edit-contact-response" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Facebook URL</label>
+                                <input type="url" id="edit-social-fb" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Instagram URL</label>
+                                <input type="url" id="edit-social-insta" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Twitter URL</label>
+                                <input type="url" id="edit-social-twitter" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <div class="form-group">
+                                <label>Pinterest URL</label>
+                                <input type="url" id="edit-social-pinterest" class="page-editor" style="min-height: auto;">
+                            </div>
+                            <button class="btn btn-success" onclick="saveContactContent()" style="margin-top: 2rem; width: 100%;">Save Contact Changes</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Add Blog Tab -->
+                    <div id="add-blog-tab" class="hidden">
+                        <h3 style="margin-bottom: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; font-weight: 600;">Create New Blog</h3>
+                        <div class="form-group">
+                            <label>Blog Title</label>
+                            <input type="text" id="new-blog-title" placeholder="Enter blog title">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <input type="text" id="new-blog-category" placeholder="e.g., Skincare, Makeup, Wellness">
+                        </div>
+                        <div class="form-group">
+                            <label>Blog Content (HTML Code)</label>
+                            <textarea id="new-blog-content" class="code-editor" placeholder="<h2>Introduction</h2><p>Your content here...</p>"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Excerpt</label>
+                            <textarea id="new-blog-excerpt" rows="4" placeholder="Short description for blog card"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Featured Image URL</label>
+                            <input type="text" id="new-blog-image" placeholder="https://example.com/image.jpg">
+                        </div>
+                        <button class="btn btn-success" onclick="publishBlog()" style="width: 100%; padding: 1.5rem; font-size: 1.1rem;">Publish Blog</button>
+                    </div>
+                    
+                    <!-- Manage Blogs Tab -->
+                    <div id="manage-blogs-tab" class="hidden">
+                        <h3 style="margin-bottom: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; font-weight: 600;">Manage Existing Blogs</h3>
+                        <div class="blog-list" id="admin-blog-list">
+                            <!-- Blog list will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Analytics Tab -->
+                    <div id="analytics-tab" class="hidden">
+                        <h3 style="margin-bottom: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; font-weight: 600;">Blog Analytics</h3>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-number" id="total-blogs">0</span>
+                                <span>Total Blogs</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">2026</span>
+                                <span>Current Year</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span>Uptime</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Lumière Beauty</h3>
+                <p id="footer-text">Your trusted source for science-backed skincare advice and beauty education. Transforming routines, one glow at a time.</p>
+                <div class="social-links">
+                    <a href="#" id="footer-fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" id="footer-insta"><i class="fab fa-instagram"></i></a>
+                    <a href="#" id="footer-pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#" onclick="showPage('about')">About Us</a></p>
+                <p><a href="#" onclick="showPage('blogs')">All Blogs</a></p>
+                <p><a href="#" onclick="showPage('contact')">Contact</a></p>
+                <p><a href="#" class="admin-btn" onclick="showPage('admin-login')">Admin Login</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope" style="margin-right: 1rem;"></i> <span id="footer-email">hello@lumierebeauty.com</span></p>
+                <p><i class="fas fa-phone" style="margin-right: 1rem;"></i> <span id="footer-phone">+1 (555) 123-4567</span></p>
+                <p><i class="fas fa-calendar" style="margin-right: 1rem;"></i> Est. 2026</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lumière Beauty. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> for beautiful skin</p>
+        </div>
+    </footer>
+
+    <script>
+        function showHint() {
+            const hint = document.getElementById('hint-text');
+            hint.classList.toggle('hidden');
+        }
+
+        // Default page content
+        const defaultPageContent = {
+            home: {
+                heroTitle: "Discover the Art of Radiant Skin",
+                heroText: "Expert skincare guidance, personalized routines, and transformative beauty insights curated by industry professionals to help you achieve your most luminous complexion in 2026",
+                featuredTitle: "Featured Articles"
+            },
+            about: {
+                title: "About Lumière Beauty",
+                subtitle: "Transforming Skincare Through Science & Art",
+                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600",
+                content: `<p>Welcome to Lumière Beauty, your premier destination for science-backed skincare education and personalized beauty solutions. We're dedicated to helping you achieve healthy, radiant skin through expert guidance and evidence-based routines.</p>
+                        <p>Our team of certified dermatologists, licensed estheticians, and beauty experts collaborate to bring you the most effective, research-supported skincare strategies. We believe that everyone deserves to feel confident and beautiful in their own skin.</p>
+                        <p>Through our comprehensive guides, detailed product reviews, and customized recommendations, we've empowered thousands to transform their skincare journey. Your path to luminous, healthy skin begins here.</p>`,
+                stat1: "15+",
+                stat2: "750+",
+                stat3: "100k+"
+            },
+            blogs: {
+                title: "Beauty & Skincare Blog"
+            },
+            contact: {
+                title: "Get In Touch",
+                email: "hello@lumierebeauty.com",
+                phone: "+1 (555) 123-4567",
+                response: "Within 12 hours",
+                socialFb: "#",
+                socialInsta: "#",
+                socialTwitter: "#",
+                socialPinterest: "#"
+            },
+            footer: {
+                text: "Your trusted source for science-backed skincare advice and beauty education. Transforming routines, one glow at a time.",
+                email: "hello@lumierebeauty.com",
+                phone: "+1 (555) 123-4567"
+            }
+        };
+
+        // Load saved page content or use defaults
+        function loadPageContent() {
+            const saved = JSON.parse(localStorage.getItem('pageContent')) || {};
+            
+            // Home
+            document.getElementById('home-hero-title').textContent = saved.home?.heroTitle || defaultPageContent.home.heroTitle;
+            document.getElementById('home-hero-text').textContent = saved.home?.heroText || defaultPageContent.home.heroText;
+            document.getElementById('home-featured-title').textContent = saved.home?.featuredTitle || defaultPageContent.home.featuredTitle;
+            
+            // About
+            document.getElementById('about-title').textContent = saved.about?.title || defaultPageContent.about.title;
+            document.getElementById('about-subtitle').textContent = saved.about?.subtitle || defaultPageContent.about.subtitle;
+            document.getElementById('about-image').src = saved.about?.image || defaultPageContent.about.image;
+            document.getElementById('about-content').innerHTML = saved.about?.content || defaultPageContent.about.content;
+            document.getElementById('stat-1').textContent = saved.about?.stat1 || defaultPageContent.about.stat1;
+            document.getElementById('stat-2').textContent = saved.about?.stat2 || defaultPageContent.about.stat2;
+            document.getElementById('stat-3').textContent = saved.about?.stat3 || defaultPageContent.about.stat3;
+            
+            // Blogs
+            document.getElementById('blogs-title').textContent = saved.blogs?.title || defaultPageContent.blogs.title;
+            
+            // Contact
+            document.getElementById('contact-title').textContent = saved.contact?.title || defaultPageContent.contact.title;
+            document.getElementById('contact-email').textContent = saved.contact?.email || defaultPageContent.contact.email;
+            document.getElementById('contact-phone').textContent = saved.contact?.phone || defaultPageContent.contact.phone;
+            document.getElementById('contact-response').textContent = saved.contact?.response || defaultPageContent.contact.response;
+            document.getElementById('social-fb').href = saved.contact?.socialFb || defaultPageContent.contact.socialFb;
+            document.getElementById('social-insta').href = saved.contact?.socialInsta || defaultPageContent.contact.socialInsta;
+            document.getElementById('social-twitter').href = saved.contact?.socialTwitter || defaultPageContent.contact.socialTwitter;
+            document.getElementById('social-pinterest').href = saved.contact?.socialPinterest || defaultPageContent.contact.socialPinterest;
+            
+            // Footer
+            document.getElementById('footer-text').textContent = saved.footer?.text || defaultPageContent.footer.text;
+            document.getElementById('footer-email').textContent = saved.footer?.email || defaultPageContent.footer.email;
+            document.getElementById('footer-phone').textContent = saved.footer?.phone || defaultPageContent.footer.phone;
+            document.getElementById('footer-fb').href = saved.contact?.socialFb || defaultPageContent.contact.socialFb;
+            document.getElementById('footer-insta').href = saved.contact?.socialInsta || defaultPageContent.contact.socialInsta;
+            document.getElementById('footer-pinterest').href = saved.contact?.socialPinterest || defaultPageContent.contact.socialPinterest;
+        }
+
+        // Save functions for each page
+        function saveHomeContent() {
+            const saved = JSON.parse(localStorage.getItem('pageContent')) || {};
+            saved.home = {
+                heroTitle: document.getElementById('edit-home-hero-title').value,
+                heroText: document.getElementById('edit-home-hero-text').value,
+                featuredTitle: document.getElementById('edit-home-featured-title').value
+            };
+            localStorage.setItem('pageContent', JSON.stringify(saved));
+            loadPageContent();
+            alert('Home page content saved successfully!');
+        }
+
+        function saveAboutContent() {
+            const saved = JSON.parse(localStorage.getItem('pageContent')) || {};
+            saved.about = {
+                title: document.getElementById('edit-about-title').value,
+                subtitle: document.getElementById('edit-about-subtitle').value,
+                image: document.getElementById('edit-about-image').value,
+                content: document.getElementById('edit-about-content').value,
+                stat1: document.getElementById('edit-stat-1').value,
+                stat2: document.getElementById('edit-stat-2').value,
+                stat3: document.getElementById('edit-stat-3').value
+            };
+            localStorage.setItem('pageContent', JSON.stringify(saved));
+            loadPageContent();
+            alert('About page content saved successfully!');
+        }
+
+        function saveBlogsContent() {
+            const saved = JSON.parse(localStorage.getItem('pageContent')) || {};
+            saved.blogs = {
+                title: document.getElementById('edit-blogs-title').value
+            };
+            localStorage.setItem('pageContent', JSON.stringify(saved));
+            loadPageContent();
+            alert('Blogs page content saved successfully!');
+        }
+
+        function saveContactContent() {
+            const saved = JSON.parse(localStorage.getItem('pageContent')) || {};
+            saved.contact = {
+                title: document.getElementById('edit-contact-title').value,
+                email: document.getElementById('edit-contact-email').value,
+                phone: document.getElementById('edit-contact-phone').value,
+                response: document.getElementById('edit-contact-response').value,
+                socialFb: document.getElementById('edit-social-fb').value,
+                socialInsta: document.getElementById('edit-social-insta').value,
+                socialTwitter: document.getElementById('edit-social-twitter').value,
+                socialPinterest: document.getElementById('edit-social-pinterest').value
+            };
+            saved.footer = {
+                email: document.getElementById('edit-contact-email').value,
+                phone: document.getElementById('edit-contact-phone').value
+            };
+            localStorage.setItem('pageContent', JSON.stringify(saved));
+            loadPageContent();
+            alert('Contact page content saved successfully!');
+        }
+
+        // Populate admin edit fields with current content
+        function populateEditFields() {
+            const saved = JSON.parse(localStorage.getItem('pageContent')) || {};
+            
+            // Home
+            document.getElementById('edit-home-hero-title').value = saved.home?.heroTitle || defaultPageContent.home.heroTitle;
+            document.getElementById('edit-home-hero-text').value = saved.home?.heroText || defaultPageContent.home.heroText;
+            document.getElementById('edit-home-featured-title').value = saved.home?.featuredTitle || defaultPageContent.home.featuredTitle;
+            
+            // About
+            document.getElementById('edit-about-title').value = saved.about?.title || defaultPageContent.about.title;
+            document.getElementById('edit-about-subtitle').value = saved.about?.subtitle || defaultPageContent.about.subtitle;
+            document.getElementById('edit-about-image').value = saved.about?.image || defaultPageContent.about.image;
+            document.getElementById('edit-about-content').value = saved.about?.content || defaultPageContent.about.content;
+            document.getElementById('edit-stat-1').value = saved.about?.stat1 || defaultPageContent.about.stat1;
+            document.getElementById('edit-stat-2').value = saved.about?.stat2 || defaultPageContent.about.stat2;
+            document.getElementById('edit-stat-3').value = saved.about?.stat3 || defaultPageContent.about.stat3;
+            
+            // Blogs
+            document.getElementById('edit-blogs-title').value = saved.blogs?.title || defaultPageContent.blogs.title;
+            
+            // Contact
+            document.getElementById('edit-contact-title').value = saved.contact?.title || defaultPageContent.contact.title;
+            document.getElementById('edit-contact-email').value = saved.contact?.email || defaultPageContent.contact.email;
+            document.getElementById('edit-contact-phone').value = saved.contact?.phone || defaultPageContent.contact.phone;
+            document.getElementById('edit-contact-response').value = saved.contact?.response || defaultPageContent.contact.response;
+            document.getElementById('edit-social-fb').value = saved.contact?.socialFb || defaultPageContent.contact.socialFb;
+            document.getElementById('edit-social-insta').value = saved.contact?.socialInsta || defaultPageContent.contact.socialInsta;
+            document.getElementById('edit-social-twitter').value = saved.contact?.socialTwitter || defaultPageContent.contact.socialTwitter;
+            document.getElementById('edit-social-pinterest').value = saved.contact?.socialPinterest || defaultPageContent.contact.socialPinterest;
+        }
+
+        // 10 Unique blogs with detailed content (1500-2000 words each) and unique Unsplash images
+        const blogs = [
+            {
+                id: 1,
+                title: "The Complete Guide to Retinol: Transform Your Skin",
+                category: "Anti-Aging",
+                date: "January 10, 2026",
+                excerpt: "Everything you need to know about retinol, from beginner tips to advanced usage for anti-aging and acne treatment.",
+                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800",
+                content: `
+                    <a class="back-button" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+                    <div class="blog-header">
+                        <h1>The Complete Guide to Retinol: Transform Your Skin</h1>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> January 10, 2026</span>
+                            <span><i class="far fa-user"></i> Lumière Beauty Team</span>
+                            <span><i class="far fa-clock"></i> 15 min read</span>
+                        </div>
+                    </div>
+                    
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=900" alt="Retinol Skincare" class="blog-featured-image">
+                    
+                    <div class="blog-section">
+                        <h2>Introduction to Retinol</h2>
+                        <p>Retinol stands as the gold standard in anti-aging skincare, backed by decades of scientific research and clinical studies. This powerful derivative of vitamin A has revolutionized how we approach skin renewal, offering remarkable benefits for reducing fine lines, improving texture, combating acne, and promoting overall skin health.</p>
+                        
+                        <p>Whether you're a skincare beginner looking to start your anti-aging journey or an experienced user seeking to optimize your routine, understanding retinol is essential for achieving youthful, radiant skin. This comprehensive guide will walk you through everything you need to know about incorporating retinol safely and effectively into your skincare regimen.</p>
+                        
+                        <p>Retinol works by accelerating cell turnover, stimulating collagen production, and unclogging pores. These mechanisms make it incredibly versatile for addressing multiple skin concerns simultaneously. However, with great power comes the need for proper usage—this guide ensures you maximize benefits while minimizing potential irritation.</p>
+                    </div>
+
+                    <div class="infographic">
+                        <h3><i class="fas fa-info-circle"></i> Key Benefits of Retinol</h3>
+                        <ul>
+                            <li><strong>Reduces Fine Lines and Wrinkles:</strong> Stimulates collagen production to smooth existing lines and prevent new ones from forming</li>
+                            <li><strong>Improves Skin Texture:</strong> Accelerates cell turnover for smoother, more refined skin surface</li>
+                            <li><strong>Fades Hyperpigmentation:</strong> Evens skin tone by reducing dark spots, sun damage, and post-acne marks</li>
+                            <li><strong>Unclogs Pores:</strong> Prevents and treats acne by keeping pores clear of debris</li>
+                            <li><strong>Boosts Collagen:</strong> Increases collagen synthesis for firmer, more youthful skin</li>
+                            <li><strong>Enhances Radiance:</strong> Reveals fresher, brighter skin cells for natural glow</li>
+                        </ul>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>How Retinol Works</h2>
+                        <p>Retinol belongs to the retinoid family, which includes various forms of vitamin A. When applied topically, retinol penetrates the skin and converts to retinoic acid, the active form that communicates with skin cells.</p>
+                        
+                        <h3>The Science Behind Retinol:</h3>
+                        <p>Retinoic acid binds to specific receptors in skin cells, triggering a cascade of beneficial effects. It speeds up the natural exfoliation process, preventing dead skin cells from clogging pores and creating dullness. Simultaneously, it signals fibroblasts to produce more collagen and elastin, the proteins responsible for skin's firmness and elasticity.</p>
+                        
+                        <p>This dual action—increasing cell turnover while boosting structural proteins—makes retinol uniquely effective for both anti-aging and acne treatment. Unlike superficial treatments that only address surface concerns, retinol works at the cellular level to create lasting improvements in skin health and appearance.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>How to Start Using Retinol</h2>
+                        <p>Starting retinol requires patience and a strategic approach to minimize irritation while building tolerance. Follow this gradual introduction protocol:</p>
+                        
+                        <h3>Week 1-2: Introduction Phase</h3>
+                        <p>Apply a pea-sized amount once weekly at night. Choose a low concentration (0.25% or 0.5%) if you're new to retinoids. Apply to completely dry skin—wait 20-30 minutes after cleansing to ensure skin is fully dry, as damp skin increases penetration and potential irritation.</p>
+                        
+                        <h3>Week 3-4: Building Frequency</h3>
+                        <p>Increase to twice weekly, spacing applications 3-4 days apart. Monitor your skin's response. Mild dryness or flaking is normal, but severe redness or burning indicates you should reduce frequency.</p>
+                        
+                        <h3>Month 2: Increasing Tolerance</h3>
+                        <p>Move to every other night application if your skin tolerates twice-weekly use well. Continue using a pea-sized amount for the entire face—more product doesn't mean better results and increases irritation risk.</p>
+                        
+                        <h3>Month 3 and Beyond: Maintenance</h3>
+                        <p>Most users can eventually tolerate nightly use, though some prefer maintaining every-other-night application. Listen to your skin—if irritation occurs, scale back frequency temporarily.</p>
+                        
+                        <h3>Application Technique:</h3>
+                        <ul>
+                            <li>Cleanse face thoroughly and pat completely dry</li>
+                            <li>Wait 20-30 minutes to ensure skin is fully dry</li>
+                            <li>Apply pea-sized amount to entire face (not just problem areas)</li>
+                            <li>Avoid eye area, corners of nose, and lips</li>
+                            <li>Follow with moisturizer after 10-20 minutes</li>
+                            <li>Always use SPF 30+ during the day</li>
+                        </ul>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Choosing the Right Retinol Concentration</h2>
+                        <p>Retinol products come in various strengths, typically ranging from 0.25% to 2%. Selecting the appropriate concentration depends on your experience level and skin sensitivity:</p>
+                        
+                        <h3>Beginner (0.25% - 0.5%):</h3>
+                        <p>Ideal for those new to retinoids or with sensitive skin. Start here regardless of age—jumping to high concentrations increases irritation without providing faster results.</p>
+                        
+                        <h3>Intermediate (0.5% - 1%):</h3>
+                        <p>For users who have built tolerance to lower concentrations over 2-3 months. This range provides enhanced benefits for fine lines and texture.</p>
+                        
+                        <h3>Advanced (1% - 2%):</h3>
+                        <p>Reserved for experienced users with resilient skin who have used retinol consistently for 6+ months. Higher isn't always better—consistency with moderate concentration often yields better long-term results than aggressive approaches.</p>
+                        
+                        <h3>Encapsulated Retinol:</h3>
+                        <p>Modern formulations use encapsulation technology to release retinol slowly, reducing irritation while maintaining efficacy. These are excellent options for sensitive skin or those transitioning between concentrations.</p>
+                    </div>
+
+                    <div class="key-takeaways">
+                        <h3><i class="fas fa-star"></i> Key Takeaways</h3>
+                        <ul>
+                            <li>Start with low concentration (0.25-0.5%) and use once weekly, gradually increasing frequency</li>
+                            <li>Always apply to completely dry skin to minimize irritation</li>
+                            <li>Never skip sunscreen—retinol increases sun sensitivity significantly</li>
+                            <li>Expect initial adjustment period (4-6 weeks) with possible dryness or flaking</li>
+                            <li>Visible results appear in 8-12 weeks; significant anti-aging benefits take 3-6 months</li>
+                            <li>Avoid during pregnancy and breastfeeding—consult doctor for alternatives</li>
+                            <li>Don't mix with vitamin C, AHA/BHA, or benzoyl peroxide in same routine</li>
+                            <li>Use pea-sized amount for entire face—more doesn't equal better results</li>
+                            <li>Buffer with moisturizer if experiencing irritation</li>
+                            <li>Consistency matters more than concentration—regular use of moderate strength beats sporadic high-strength use</li>
+                        </ul>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Managing Retinol Side Effects</h2>
+                        <p>While retinol is highly effective, it can cause temporary side effects as your skin adjusts. Here's how to manage common concerns:</p>
+                        
+                        <h3>Dryness and Flaking:</h3>
+                        <p>This is the most common side effect, occurring during the "retinization" period (first 4-6 weeks). Combat dryness by:</p>
+                        <ul>
+                            <li>Reducing application frequency temporarily</li>
+                            <li>Applying moisturizer before and after retinol (sandwich method)</li>
+                            <li>Using hydrating serums with hyaluronic acid</li>
+                            <li>Avoiding other drying products (alcohol-based toners, physical scrubs)</li>
+                        </ul>
+                        
+                        <h3>Redness and Irritation:</h3>
+                        <p>Mild redness is normal, but severe irritation means you should:</p>
+                        <ul>
+                            <li>Scale back to once weekly or pause use for a few days</li>
+                            <li>Apply soothing ingredients like centella asiatica or niacinamide</li>
+                            <li>Use cool compresses to calm inflammation</li>
+                            <li>Consider switching to encapsulated retinol or lower concentration</li>
+                        </ul>
+                        
+                        <h3>Purging:</h3>
+                        <p>Retinol can cause initial breakouts as it accelerates cell turnover, bringing underlying congestion to the surface. This "purging" typically lasts 4-6 weeks and differs from regular breakouts because it occurs in areas where you normally experience congestion.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Retinol and Sun Protection</h2>
+                        <p>Sun protection is non-negotiable when using retinol. Retinol increases photosensitivity by thinning the stratum corneum (outer skin layer) and accelerating cell turnover, making skin more vulnerable to UV damage.</p>
+                        
+                        <p>Always use broad-spectrum SPF 30 or higher daily, even when indoors or on cloudy days. UV rays penetrate windows and clouds, and retinol makes skin more susceptible to damage. Reapply every 2 hours when outdoors, and wear protective clothing and hats for extended sun exposure.</p>
+                        
+                        <p>Apply retinol only at night, as sunlight degrades retinol and reduces its effectiveness. Store retinol products in a cool, dark place to maintain stability.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>When to Expect Results</h2>
+                        <p>Patience is essential with retinol. While some notice improved texture within 2-4 weeks, significant anti-aging results require consistent use over several months:</p>
+                        
+                        <ul>
+                            <li><strong>Weeks 1-4:</strong> Adjustment period; possible dryness, flaking, or purging</li>
+                            <li><strong>Weeks 4-8:</strong> Improved texture and brightness; reduced congestion</li>
+                            <li><strong>Weeks 8-12:</strong> Visible reduction in fine lines; more even tone</li>
+                            <li><strong>Months 3-6:</strong> Significant improvement in wrinkles, firmness, and overall skin quality</li>
+                            <li><strong>6+ months:</strong> Continued collagen production and anti-aging benefits</li>
+                        </ul>
+                        
+                        <p>Retinol is a long-term investment in skin health. Results compound over time, making consistency more important than intensity.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Retinol Alternatives</h2>
+                        <p>If retinol proves too irritating or you're pregnant/breastfeeding, consider these alternatives:</p>
+                        
+                        <h3>Bakuchiol:</h3>
+                        <p>A plant-based alternative that mimics retinol's effects without irritation. Studies show comparable results for fine lines and pigmentation with better tolerability.</p>
+                        
+                        <h3>Retinaldehyde:</h3>
+                        <p>One step closer to retinoic acid than retinol, potentially more effective but may cause more irritation. Good intermediate option.</p>
+                        
+                        <h3>Granactive Retinoid:</h3>
+                        <p>A newer, more stable form that's gentler than traditional retinol while maintaining efficacy.</p>
+                        
+                        <h3>Prescription Retinoids:</h3>
+                        <p>Tretinoin (Retin-A) is prescription-strength and more potent than over-the-counter retinol. Consult a dermatologist if OTC options aren't providing desired results.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Frequently Asked Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Can I use retinol with sensitive skin?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, but proceed cautiously. Start with 0.25% concentration once weekly, buffer with moisturizer (apply moisturizer, then retinol, then moisturizer again), and gradually increase frequency. Consider encapsulated retinol or bakuchiol if traditional retinol proves too irritating. Always patch test first and consult a dermatologist if you have conditions like rosacea or eczema.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>When will I see results from retinol?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Initial improvements in texture and brightness appear in 4-6 weeks. Significant anti-aging results—reduced fine lines, improved firmness—take 3-6 months of consistent use. Acne improvements show in 8-12 weeks. Remember, retinol is a marathon, not a sprint; results compound over time with continued use.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>What concentration should I start with?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Beginners should start with 0.25% or 0.5% regardless of age or skin concerns. Higher concentrations don't provide faster results and increase irritation risk. Once you've built tolerance over 2-3 months with no adverse effects, you can consider increasing to 1% if desired. Consistency with moderate concentration yields better long-term results than aggressive approaches.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Can I use retinol morning and night?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No, only use retinol at night. Sunlight degrades retinol, rendering it ineffective, and retinol increases sun sensitivity, making daytime use risky. Always apply retinol as part of your evening routine, and never skip daytime SPF. If you want morning anti-aging benefits, use vitamin C serum instead, which works synergistically with nighttime retinol.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Why is my skin peeling and flaking?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Mild peeling and flaking are normal during the "retinization" period (first 4-6 weeks) as retinol accelerates cell turnover. This is temporary. To manage: reduce application frequency, use the sandwich method (moisturizer-retinol-moisturizer), increase hydration with hyaluronic acid, and avoid other exfoliants. If peeling is severe or accompanied by burning, pause use for a few days, then restart at lower frequency. Don't pick or pull flaking skin.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Can I use retinol if pregnant or breastfeeding?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>No, avoid all retinoids during pregnancy and breastfeeding. While topical retinol has minimal systemic absorption, it's contraindicated due to potential risks. Safe alternatives include bakuchiol, vitamin C, azelaic acid, and gentle AHAs like lactic acid. Always consult your obstetrician before using any skincare products during pregnancy or while nursing.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Should I stop other actives when using retinol?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You don't need to stop all actives, but avoid using them simultaneously with retinol. Don't mix retinol with vitamin C, AHA/BHA acids, or benzoyl peroxide in the same routine as this increases irritation. Use vitamin C in the morning and retinol at night. If using acids, alternate nights (retinol one night, acid the next). Niacinamide and hyaluronic acid are generally safe to use with retinol.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Is prescription retinol better than over-the-counter?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Prescription retinoids like tretinoin (Retin-A) are more potent than OTC retinol because they're already in the active retinoic acid form, while retinol must convert in the skin. Tretinoin provides faster, more dramatic results but also causes more irritation. For most people, consistent use of OTC retinol provides excellent long-term results with better tolerability. Consult a dermatologist if OTC options aren't meeting your needs after 6 months of consistent use.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Conclusion</h2>
+                        <p>Retinol remains the gold standard for anti-aging and acne treatment, offering remarkable benefits when used correctly. Success with retinol requires patience, consistency, and proper technique. Start slowly with low concentration, gradually build tolerance, and never skip sun protection.</p>
+                        
+                        <p>Remember that retinol is a long-term investment in your skin's health. While the adjustment period can be challenging, the results—smoother texture, reduced fine lines, even tone, and improved clarity—are well worth the effort. Listen to your skin, adjust frequency as needed, and maintain realistic expectations about timeline.</p>
+                        
+                        <p>Whether you're just starting your retinol journey or looking to optimize your current routine, the key is consistency over intensity. With proper use and patience, retinol can transform your skin, revealing a more youthful, radiant complexion for years to come.</p>
+                    </div>
+                `
+            },
+            {
+                id: 2,
+                title: "Morning Skincare Routine: 5 Steps to Glowing Skin",
+                category: "Routine",
+                date: "January 15, 2026",
+                excerpt: "A simple yet effective morning routine that takes just 10 minutes for healthy, protected skin all day.",
+                image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800",
+                content: `
+                    <a class="back-button" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+                    <div class="blog-header">
+                        <h1>Morning Skincare Routine: 5 Steps to Glowing Skin</h1>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> January 15, 2026</span>
+                            <span><i class="far fa-user"></i> Lumière Beauty Team</span>
+                            <span><i class="far fa-clock"></i> 12 min read</span>
+                        </div>
+                    </div>
+                    
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=900" alt="Morning Routine" class="blog-featured-image">
+                    
+                    <div class="blog-section">
+                        <h2>Introduction</h2>
+                        <p>Your morning skincare routine sets the foundation for your skin's health and appearance throughout the entire day. While it's tempting to skip steps when rushing, a proper morning routine protects your skin from environmental aggressors, maintains hydration, and creates the perfect canvas for makeup application.</p>
+                        
+                        <p>This streamlined 5-step routine takes just 10 minutes but delivers maximum benefits. Whether you're a skincare novice or looking to simplify your existing routine, these essential steps will help you achieve healthy, protected, glowing skin every single day.</p>
+                        
+                        <p>The key to an effective morning routine is focusing on protection and preparation. Unlike your evening routine which emphasizes repair and treatment, your morning regimen should shield your skin from UV damage, pollution, and environmental stress while providing lightweight hydration that lasts all day.</p>
+                    </div>
+
+                    <div class="infographic">
+                        <h3><i class="fas fa-sun"></i> The 5-Step Morning Routine</h3>
+                        <ul>
+                            <li><strong>Step 1:</strong> Gentle Cleanser (2 minutes) - Remove overnight buildup</li>
+                            <li><strong>Step 2:</strong> Vitamin C Serum (1 minute) - Antioxidant protection</li>
+                            <li><strong>Step 3:</strong> Hydrating Moisturizer (1 minute) - Lock in moisture</li>
+                            <li><strong>Step 4:</strong> Eye Cream (30 seconds) - Protect delicate area</li>
+                            <li><strong>Step 5:</strong> Sunscreen SPF 30+ (3 minutes) - Essential UV protection</li>
+                        </ul>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Step 1: Gentle Cleanser</h2>
+                        <p>While you sleep, your skin accumulates sweat, oils, and skincare products from the night before. Morning cleansing removes this buildup without stripping your skin's natural moisture barrier.</p>
+                        
+                        <h3>Choosing the Right Cleanser:</h3>
+                        <p>Select a gentle, pH-balanced cleanser suited to your skin type. Avoid harsh foaming cleansers or hot water, as these can strip natural oils and compromise your skin barrier.</p>
+                        
+                        <ul>
+                            <li><strong>Normal/Combination:</strong> Gel or cream cleanser with mild surfactants</li>
+                            <li><strong>Oily:</strong> Gel cleanser with salicylic acid or tea tree oil</li>
+                            <li><strong>Dry:</strong> Cream or milk cleanser with hydrating ingredients</li>
+                            <li><strong>Sensitive:</strong> Fragrance-free, hypoallergenic formula</li>
+                        </ul>
+                        
+                        <h3>Proper Cleansing Technique:</h3>
+                        <p>Use lukewarm water—never hot, as heat damages the skin barrier. Massage cleanser gently in circular motions for 60 seconds, focusing on your T-zone where oil accumulates. Don't forget your jawline, hairline, and neck. Rinse thoroughly and pat (never rub) dry with a clean, soft towel.</p>
+                        
+                        <p><strong>Time-saving tip:</strong> Keep your cleanser in the shower and cleanse your face while washing your body to save time.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Step 2: Vitamin C Serum</h2>
+                        <p>Vitamin C is your morning skincare MVP. This powerful antioxidant provides crucial protection against environmental damage while brightening your complexion and boosting collagen production.</p>
+                        
+                        <h3>Benefits of Morning Vitamin C:</h3>
+                        <ul>
+                            <li><strong>Antioxidant Protection:</strong> Neutralizes free radicals from pollution and UV exposure</li>
+                            <li><strong>Brightening:</strong> Reduces dark spots and evens skin tone</li>
+                            <li><strong>Collagen Boost:</strong> Stimulates collagen synthesis for firmer skin</li>
+                            <li><strong>Enhanced SPF:</strong> Works synergistically with sunscreen for superior protection</li>
+                            <li><strong>Anti-Inflammatory:</strong> Calms redness and irritation</li>
+                        </ul>
+                        
+                        <h3>Application Technique:</h3>
+                        <p>Apply 3-5 drops to slightly damp skin—this enhances absorption. Press gently into your face and neck using your palms; don't rub. Wait 30-60 seconds for absorption before moving to the next step.</p>
+                        
+                        <h3>Choosing Vitamin C:</h3>
+                        <p>Look for L-ascorbic acid 10-20% concentration with ferulic acid and vitamin E for enhanced stability and efficacy. Store in a cool, dark place and use within 3 months of opening, as vitamin C oxidizes and loses potency.</p>
+                        
+                        <p><strong>Note:</strong> If you experience irritation, start with a lower concentration (5-10%) or use every other day until your skin builds tolerance.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Step 3: Hydrating Moisturizer</h2>
+                        <p>Moisturizer locks in the hydration from your serum and creates a protective barrier that prevents transepidermal water loss throughout the day.</p>
+                        
+                        <h3>Choosing Your Moisturizer:</h3>
+                        <p>Select a formula based on your skin type and climate:</p>
+                        
+                        <ul>
+                            <li><strong>Oily Skin:</strong> Gel-based, oil-free, non-comedogenic formula</li>
+                            <li><strong>Dry Skin:</strong> Rich cream with ceramides, hyaluronic acid, and shea butter</li>
+                            <li><strong>Combination:</strong> Lightweight lotion or gel-cream hybrid</li>
+                            <li><strong>Sensitive:</strong> Fragrance-free with soothing ingredients like centella or oat</li>
+                        </ul>
+                        
+                        <h3>Application Tips:</h3>
+                        <p>Apply to damp skin for maximum absorption. Use upward, outward motions, and don't forget your neck and décolletage—these areas show age just as much as your face. Use a pea-sized amount for your face and another pea-sized amount for your neck.</p>
+                        
+                        <p><strong>Pro tip:</strong> If your skin feels tight or dehydrated, apply moisturizer to damp skin immediately after cleansing, then layer vitamin C serum on top.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Step 4: Eye Cream</h2>
+                        <p>The skin around your eyes is 10 times thinner than the rest of your face, making it the first area to show signs of aging, fatigue, and dehydration. Eye cream provides targeted care for this delicate area.</p>
+                        
+                        <h3>Key Ingredients to Look For:</h3>
+                        <ul>
+                            <li><strong>Caffeine:</strong> Reduces puffiness and dark circles</li>
+                            <li><strong>Hyaluronic Acid:</strong> Plumps fine lines and hydrates</li>
+                            <li><strong>Peptides:</strong> Stimulate collagen for firmer skin</li>
+                            <li><strong>Vitamin C:</strong> Brightens dark circles</li>
+                            <li><strong>Ceramides:</strong> Strengthen delicate skin barrier</li>
+                        </ul>
+                        
+                        <h3>Application Technique:</h3>
+                        <p>Use your ring finger—it applies the least pressure. Dot a rice-grain-sized amount around your orbital bone, starting from the inner corner and working outward. Gently pat (never rub or pull) until absorbed. Avoid applying too close to the lash line to prevent migration into eyes.</p>
+                        
+                        <p><strong>Time-saver:</strong> If you're extremely rushed, you can skip eye cream occasionally, but consistent use provides the best long-term results.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Step 5: Sunscreen SPF 30+</h2>
+                        <p>This is THE most important step in your morning routine. Sunscreen prevents premature aging, hyperpigmentation, and skin cancer. Never, ever skip it—even on cloudy days or when you're indoors near windows.</p>
+                        
+                        <h3>How Much to Use:</h3>
+                        <p>Apply 1/4 teaspoon for your face and another 1/4 teaspoon for your neck. Most people apply only 25-50% of the recommended amount, which drastically reduces protection. Don't skimp!</p>
+                        
+                        <h3>Application Technique:</h3>
+                        <p>Apply sunscreen as the final step in your skincare routine. Dot it across your face, then gently massage in using upward motions. Wait 15 minutes before applying makeup to allow it to form a protective film.</p>
+                        
+                        <h3>Types of Sunscreen:</h3>
+                        <ul>
+                            <li><strong>Chemical:</strong> Lightweight, no white cast, needs 15 minutes to activate. Best for daily wear under makeup.</li>
+                            <li><strong>Mineral:</strong> Gentle on sensitive skin, works immediately, may leave white cast. Best for sensitive or reactive skin.</li>
+                            <li><strong>Tinted:</strong> Provides light coverage while protecting. Great for no-makeup days.</li>
+                        </ul>
+                        
+                        <h3>Reapplication:</h3>
+                        <p>If you're outdoors, reapply every 2 hours. Use a setting spray with SPF or powder sunscreen over makeup for easy touch-ups. If you're indoors all day, one morning application is sufficient.</p>
+                        
+                        <p><strong>Critical reminder:</strong> UV rays penetrate clouds and windows. You need sunscreen even on overcast days and when working near windows.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Time-Saving Tips for Busy Mornings</h2>
+                        <p>Even with a packed schedule, you can maintain this routine efficiently:</p>
+                        
+                        <h3>Prep the Night Before:</h3>
+                        <p>Set out your skincare products on your bathroom counter before bed. This eliminates decision-making in the morning and ensures you won't forget any steps.</p>
+                        
+                        <h3>Multi-Tasking Products:</h3>
+                        <p>Invest in products that serve multiple purposes:</p>
+                        <ul>
+                            <li>Moisturizer with SPF (though separate sunscreen is still best)</li>
+                            <li>Tinted moisturizer with SPF for minimal makeup days</li>
+                            <li>Vitamin C serum with hyaluronic acid</li>
+                        </ul>
+                        
+                        <h3>Keep It Simple:</h3>
+                        <p>On extremely busy mornings, stick to the absolute essentials: cleanser, moisturizer with SPF, or just sunscreen if you're running really late. Something is always better than nothing.</p>
+                        
+                        <h3>Shower Skincare:</h3>
+                        <p>Cleanse your face in the shower while your body wash rinses off. Apply your serum and moisturizer immediately after showering while your skin is still damp—this locks in extra hydration.</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Product Recommendations by Skin Type</h2>
+                        
+                        <h3>Oily/Acne-Prone Skin:</h3>
+                        <ul>
+                            <li><strong>Cleanser:</strong> Gel cleanser with salicylic acid</li>
+                            <li><strong>Serum:</strong> Niacinamide 10% + Zinc</li>
+                            <li><strong>Moisturizer:</strong> Oil-free gel moisturizer</li>
+                            <li><strong>Sunscreen:</strong> Matte finish, non-comedogenic SPF 30+</li>
+                        </ul>
+                        
+                        <h3>Dry/Dehydrated Skin:</h3>
+                        <ul>
+                            <li><strong>Cleanser:</strong> Cream or milk cleanser</li>
+                            <li><strong>Serum:</strong> Hyaluronic acid + Vitamin C</li>
+                            <li><strong>Moisturizer:</strong> Rich cream with ceramides</li>
+                            <li><strong>Sunscreen:</strong> Hydrating formula with SPF 30+</li>
+                        </ul>
+                        
+                        <h3>Combination Skin:</h3>
+                        <ul>
+                            <li><strong>Cleanser:</strong> Gentle foaming cleanser</li>
+                            <li><strong>Serum:</strong> Lightweight vitamin C</li>
+                            <li><strong>Moisturizer:</strong> Lightweight lotion or gel-cream</li>
+                            <li><strong>Sunscreen:</strong> Lightweight, non-greasy SPF 30+</li>
+                        </ul>
+                        
+                        <h3>Sensitive Skin:</h3>
+                        <ul>
+                            <li><strong>Cleanser:</strong> Fragrance-free, hypoallergenic</li>
+                            <li><strong>Serum:</strong> Gentle vitamin C derivative or skip</li>
+                            <li><strong>Moisturizer:</strong> Fragrance-free with ceramides</li>
+                            <li><strong>Sunscreen:</strong> Mineral (zinc oxide/titanium dioxide)</li>
+                        </ul>
+                    </div>
+
+                    <div class="key-takeaways">
+                        <h3><i class="fas fa-star"></i> Key Takeaways</h3>
+                        <ul>
+                            <li>Consistency matters more than complexity—do this routine daily</li>
+                            <li>Never skip sunscreen, even on cloudy days or when indoors</li>
+                            <li>Prep products the night before to save morning time</li>
+                            <li>Use multi-tasking products when possible</li>
+                            <li>Quality over quantity—invest in good sunscreen and vitamin C</li>
+                            <li>Adjust products based on your skin type and seasonal changes</li>
+                            <li>10 minutes is an investment in your long-term skin health</li>
+                            <li>Apply products to damp skin for better absorption</li>
+                            <li>Don't forget your neck and décolletage</li>
+                            <li>Wait 15 minutes after sunscreen before makeup application</li>
+                        </ul>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Common Mistakes to Avoid</h2>
+                        <ul>
+                            <li><strong>Skipping sunscreen:</strong> This is non-negotiable for preventing aging and damage</li>
+                            <li><strong>Using hot water:</strong> Lukewarm water is gentler and prevents dryness</li>
+                            <li><strong>Rushing sunscreen application:</strong> Take time to apply enough and let it absorb</li>
+                            <li><strong>Using too many products:</strong> Stick to essentials—more isn't always better</li>
+                            <li><strong>Neglecting your neck:</strong> Extend all products below your jawline</li>
+                            <li><strong>Applying to dry skin:</strong> Damp skin absorbs products better</li>
+                            <li><strong>Not waiting between steps:</strong> Allow 30-60 seconds between serum and moisturizer</li>
+                            <li><strong>Using expired products:</strong> Check expiration dates, especially for vitamin C and sunscreen</li>
+                        </ul>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Conclusion: Your Skin Will Thank You</h2>
+                        <p>Taking just 10 minutes each morning for skincare is a small investment that yields massive returns. Consistent care prevents premature aging, maintains your skin's health, and boosts your confidence. You don't need an hour-long routine or expensive products—just dedication to these essential steps.</p>
+                        
+                        <p>Remember, the best skincare routine is the one you'll actually do consistently. This 10-minute routine is designed to be sustainable for even the busiest lifestyles. Start tomorrow morning, stick with it for 30 days, and watch your skin transform.</p>
+                        
+                        <p>Your future self will thank you for taking these few minutes each day. You deserve to feel confident and beautiful, and healthy skin is the foundation of that confidence. Now go conquer your day with glowing, protected skin!</p>
+                    </div>
+
+                    <div class="blog-section">
+                        <h2>Frequently Asked Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Can I do this routine if I have sensitive skin?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely! Just choose fragrance-free, hypoallergenic products. Skip vitamin C initially if it irritates your skin, or use a gentler derivative like sodium ascorbyl phosphate. Always patch test new products on your inner arm before applying to your face. Mineral sunscreen (zinc oxide) is best for sensitive skin. Start with once-daily use and gradually increase frequency as your skin builds tolerance.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>What if I'm running really late—what's the absolute minimum?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>If you have literally 2 minutes, at minimum: splash face with water, apply moisturizer with SPF, or just sunscreen. Sunscreen is non-negotiable. You can cleanse properly tonight and apply treatment serums in your evening routine. Something is always better than nothing! Keep a travel-size sunscreen in your bag for emergency application.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Can I apply makeup immediately after sunscreen?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Wait at least 2-3 minutes after sunscreen application before applying makeup. This allows the SPF to form a protective film on your skin. If you're really rushed, use a makeup setting spray with SPF as backup (but not replacement). For best results, apply sunscreen, get dressed, then do your makeup—this gives sunscreen time to set while you complete other tasks.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Should I use different products in winter vs summer?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! In winter, switch to a creamier cleanser and richer moisturizer to combat dry air. Add a hydrating serum if needed. In summer, use gel-based products and lighter textures. You might need a more water-resistant sunscreen. Always adjust based on how your skin feels, not just the season. Humidity, indoor heating, and air conditioning all affect your skin's needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Is this routine suitable for teenagers?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! Teenagers benefit greatly from establishing good skincare habits early. Focus on gentle cleansing, lightweight hydration, and daily sunscreen. If dealing with acne, add a salicylic acid cleanser or niacinamide serum. Starting young with sun protection prevents decades of cumulative damage. Keep it simple and consistent—teen skin doesn't need complicated routines.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>How long before I see results?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You'll notice immediate benefits like improved hydration and a healthy glow within days. Long-term benefits like reduced hyperpigmentation, fewer fine lines, and improved texture appear after 4-12 weeks of consistent use. Remember, skincare is a marathon, not a sprint—consistency is everything! Take progress photos monthly to track subtle changes you might not notice day-to-day.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Can I skip vitamin C if I'm on a budget?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, you can skip vitamin C temporarily, but it's worth investing in eventually. If budget is tight, prioritize: 1) Sunscreen (non-negotiable), 2) Gentle cleanser, 3) Moisturizer. Add vitamin C when possible—it's one of the most effective anti-aging ingredients. Look for affordable options from The Ordinary, CeraVe, or The Inkey List. A good vitamin C serum doesn't need to be expensive.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">
+                                <span>Do I need to wash my face if I didn't wear makeup?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, always cleanse in the morning. Your skin produces oil and sweat overnight, and skincare products from the night before need to be removed. Even if you don't wear makeup, cleansing removes this buildup and prepares your skin to absorb daytime products effectively. Use a gentle cleanser—no need for anything harsh.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        // State management
+        let isAdmin = false;
+        let currentPage = 'home';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPageContent();
+            renderBlogs();
+            updateAdminStats();
+        });
+
+        // Navigation
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.add('hidden');
+            });
+
+            const pageMap = {
+                'home': 'home-page',
+                'about': 'about-page',
+                'blogs': 'blogs-page',
+                'contact': 'contact-page',
+                'admin-login': 'admin-login-page',
+                'admin-panel': 'admin-panel-page',
+                'blog-detail': 'blog-detail-page'
+            };
+
+            const targetPage = document.getElementById(pageMap[pageName]);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                targetPage.classList.add('fade-in');
+                window.scrollTo(0, 0);
+            }
+
+            currentPage = pageName;
+
+            if (pageName === 'blogs') {
+                renderBlogs();
+            }
+        }
+
+        function goBackToBlogs() {
+            showPage('blogs');
+        }
+
+        function renderBlogs() {
+            const featuredContainer = document.getElementById('featured-blogs');
+            const allBlogsContainer = document.getElementById('all-blogs');
+            
+            if (featuredContainer) {
+                featuredContainer.innerHTML = blogs.slice(0, 3).map(blog => createBlogCard(blog)).join('');
+            }
+            
+            if (allBlogsContainer) {
+                allBlogsContainer.innerHTML = blogs.map(blog => createBlogCard(blog)).join('');
+            }
+        }
+
+        function createBlogCard(blog) {
+            return `
+                <article class="blog-card" onclick="viewBlog(${blog.id})">
+                    <div class="blog-image">
+                        <img src="${blog.image}" alt="${blog.title}" onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600'">
+                        <span class="blog-category">${blog.category}</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar"></i> ${blog.date}</div>
+                        <h3 class="blog-title">${blog.title}</h3>
+                        <p class="blog-excerpt">${blog.excerpt}</p>
+                        <a href="#" class="read-more" onclick="event.stopPropagation(); viewBlog(${blog.id})">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            `;
+        }
+
+        function viewBlog(blogId) {
+            const blog = blogs.find(b => b.id === blogId);
+            if (!blog) return;
+
+            const container = document.getElementById('blog-content');
+            container.innerHTML = blog.content;
+            showPage('blog-detail');
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('admin-email').value;
+            const password = document.getElementById('admin-password').value;
+
+            if (email === 'admin@lumierebeauty.com' && password === 'lumiere2026') {
+                isAdmin = true;
+                document.getElementById('admin-email').value = '';
+                document.getElementById('admin-password').value = '';
+                populateEditFields();
+                showPage('admin-panel');
+                loadAdminBlogList();
+                localStorage.setItem('adminSession', 'active');
+            } else {
+                alert('Invalid login credentials. Please try again.');
+                document.getElementById('admin-password').value = '';
+            }
+        }
+
+        function handleLogout() {
+            isAdmin = false;
+            localStorage.removeItem('adminSession');
+            showPage('home');
+        }
+
+        function showAdminTab(tabName) {
+            document.getElementById('edit-pages-tab').classList.add('hidden');
+            document.getElementById('add-blog-tab').classList.add('hidden');
+            document.getElementById('manage-blogs-tab').classList.add('hidden');
+            document.getElementById('analytics-tab').classList.add('hidden');
+            
+            document.getElementById(`${tabName}-tab`).classList.remove('hidden');
+            
+            document.querySelectorAll('.admin-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            if (tabName === 'manage-blogs') {
+                loadAdminBlogList();
+            } else if (tabName === 'analytics') {
+                updateAdminStats();
+            } else if (tabName === 'edit-pages') {
+                populateEditFields();
+            }
+        }
+
+        function publishBlog() {
+            const title = document.getElementById('new-blog-title').value;
+            const category = document.getElementById('new-blog-category').value;
+            const content = document.getElementById('new-blog-content').value;
+            const excerpt = document.getElementById('new-blog-excerpt').value;
+            const image = document.getElementById('new-blog-image').value;
+
+            if (!title || !content) {
+                alert('Please fill in required fields (Title and Content)');
+                return;
+            }
+
+            const newBlog = {
+                id: blogs.length + 1,
+                title,
+                category: category || 'General',
+                date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+                excerpt: excerpt || title,
+                image: image || 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600',
+                content: content
+            };
+
+            blogs.push(newBlog);
+            localStorage.setItem('blogs', JSON.stringify(blogs));
+            
+            alert('Blog published successfully!');
+            
+            document.getElementById('new-blog-title').value = '';
+            document.getElementById('new-blog-category').value = '';
+            document.getElementById('new-blog-content').value = '';
+            document.getElementById('new-blog-excerpt').value = '';
+            document.getElementById('new-blog-image').value = '';
+            
+            updateAdminStats();
+        }
+
+        function loadAdminBlogList() {
+            const container = document.getElementById('admin-blog-list');
+            container.innerHTML = blogs.map(blog => `
+                <div class="blog-list-item">
+                    <div>
+                        <strong>${blog.title}</strong>
+                        <div style="color: #888; font-size: 0.9rem;">${blog.date} | ${blog.category}</div>
+                    </div>
+                    <div class="blog-actions">
+                        <button class="btn btn-primary" onclick="viewBlog(${blog.id})">View</button>
+                        <button class="btn btn-danger" onclick="deleteBlog(${blog.id})">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function deleteBlog(blogId) {
+            if (confirm('Are you sure you want to delete this blog?')) {
+                const index = blogs.findIndex(b => b.id === blogId);
+                if (index > -1) {
+                    blogs.splice(index, 1);
+                    localStorage.setItem('blogs', JSON.stringify(blogs));
+                    loadAdminBlogList();
+                    updateAdminStats();
+                }
+            }
+        }
+
+        function updateAdminStats() {
+            const totalBlogsEl = document.getElementById('total-blogs');
+            if (totalBlogsEl) {
+                totalBlogsEl.textContent = blogs.length;
+            }
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you within 12 hours.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
